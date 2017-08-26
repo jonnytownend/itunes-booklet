@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as elt
 
-def getDateAdded(title, artist=None, album=None, libfile='lib_copy.xml'):
+def get_date_added(title, artist=None, album=None, libfile='lib_copy.xml'):
     '''
     Searches specified iTunes Library XML file for specified track.
 
@@ -19,7 +19,7 @@ def getDateAdded(title, artist=None, album=None, libfile='lib_copy.xml'):
     Needs some pre-processing on inputs to ensure any
     unusual characters are handled correctly.
     '''
-    
+
     root = elt.parse(libfile).getroot()
     tracks = root[0][15].findall('dict') #Array of <dict> objects in XML file, one for each track entry
 
